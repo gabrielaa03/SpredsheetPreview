@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/horizontalScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/fillable_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TableLayout
+            android:id="@+id/emptyTableLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TableLayout
+            android:id="@+id/tableLayoutFixedHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/emptyTableLayout"
+            android:layout_toRightOf="@+id/emptyTableLayout" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emptyTableLayout">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TableLayout
+                    android:id="@+id/tableLayoutFixedParentColumn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:keepScreenOn="true"/>
+
+                <TableLayout
+                    android:id="@+id/tableLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tableLayoutFixedParentColumn"
+                    android:layout_toRightOf="@id/tableLayoutFixedParentColumn" />
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</HorizontalScrollView>
